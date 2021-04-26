@@ -1,14 +1,21 @@
 import PropTypes from "prop-types";
 const PersonCard = ({ person: { login, avatar_url, html_url } }) => {
   return (
-    <div>
-      <img src={avatar_url} alt=""></img>
+    <div style={{ margin: "auto" }}>
+      <img style={imgStyles} src={avatar_url} alt="img of person"></img>
       <h1>{login}</h1>
       <div>
-        <a href={html_url}>See More</a>
+        <a href={html_url} rel="noreferrer" target="_blank">
+          See More
+        </a>
       </div>
     </div>
   );
+};
+const imgStyles = {
+  width: "100px",
+  height: "100px",
+  borderRadius: "50%",
 };
 
 PersonCard.propTypes = {
