@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 const PersonCard = ({ person: { login, avatar_url, html_url } }) => {
   return (
     <div style={{ margin: "auto" }}>
       <img style={imgStyles} src={avatar_url} alt="img of person"></img>
       <h1>{login}</h1>
       <div>
-        <a href={html_url} rel="noreferrer" target="_blank">
-          See More
-        </a>
+        <Link to={`/user/${login}`}>See More</Link>
       </div>
     </div>
   );
