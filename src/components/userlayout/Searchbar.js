@@ -1,47 +1,41 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-export class Searchbar extends Component {
-  state = {
-    search: "",
-  };
 
-  static propTypes = {
-    searchUsers: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
-    showClear: PropTypes.bool.isRequired,
-    setAlert: PropTypes.func.isRequired,
-  };
+const Searchbar = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+  const [text, setText] = useState("");
 
-  onSubmit(e) {
+  const onSubmit = (e) => {
     e.preventDefault();
-    if (this.state.search === "") {
-      this.props.setAlert("please enter something", "light");
+    if (text === "") {
+      setAlert("please enter something", "light");
     } else {
-      this.props.searchUsers(this.state.search);
-      this.setState({ search: "" });
+      searchUsers(text);
+      setText("");
     }
-  }
-  render() {
-    const { showClear, clearUsers } = this.props;
+  };
 
-    return (
-      <div>
-        <form onSubmit={this.onSubmit.bind(this)}>
-          <input
-            type="text"
-            name="text"
-            placeholder="Search Users"
-            value={this.state.search}
-            onChange={(e) => {
-              this.setState({ search: e.target.value });
-            }}
-          />
-          <input type="submit" value="Search" />
-        </form>
-        {showClear && <button onClick={clearUsers}>Clear</button>}
-      </div>
-    );
-  }
-}
+  const onChange = (e) => setText(e.target.value);
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="text"
+          placeholder="Search Users"
+          value={text}
+          onChange={onChange}
+        />
+        <input type="submit" value="Search" />
+      </form>
+      {showClear && <button onClick={clearUsers}>Clear</button>}
+    </div>
+  );
+};
 
+Searchbar.propTypes = {
+  searchUsers: PropTypes.func.isRequired,
+  clearUsers: PropTypes.func.isRequired,
+  showClear: PropTypes.bool.isRequired,
+  setAlert: PropTypes.func.isRequired,
+};
 export default Searchbar;
