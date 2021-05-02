@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-
-const Searchbar = ({ searchUsers, showClear, clearUsers, setAlert }) => {
+import React, { useState, useContext } from "react";
+import GithubContext from "../../context/github/githubContext";
+import AlertContext from "../../context/alert/alertContext";
+const Searchbar = () => {
+  const githubContext = useContext(GithubContext);
+  const alertContext = useContext(AlertContext);
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (text === "") {
-      setAlert("please enter something", "light");
+      alertContext.setAlert("please enter something", "light");
     } else {
-      searchUsers(text);
+      githubContext.searchUsers(text);
       setText("");
     }
   };
@@ -27,15 +29,11 @@ const Searchbar = ({ searchUsers, showClear, clearUsers, setAlert }) => {
         />
         <input type="submit" value="Search" />
       </form>
-      {showClear && <button onClick={clearUsers}>Clear</button>}
+      {githubContext.users.length > 0 && (
+        <button onClick={githubContext.clearUsers}>Clear</button>
+      )}
     </div>
   );
 };
 
-Searchbar.propTypes = {
-  searchUsers: PropTypes.func.isRequired,
-  clearUsers: PropTypes.func.isRequired,
-  showClear: PropTypes.bool.isRequired,
-  setAlert: PropTypes.func.isRequired,
-};
 export default Searchbar;
