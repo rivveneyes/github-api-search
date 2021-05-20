@@ -9,18 +9,12 @@ const Users = () => {
   return loading ? (
     <Spinner />
   ) : (
-    <div style={personStyle}>
+    <div className="persons-display">
       {users.map((person) => (
         <PersonCard key={person.id} person={person} />
       ))}
     </div>
   );
-};
-
-const personStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1rem",
 };
 
 export default Users;

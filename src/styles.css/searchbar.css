@@ -1,0 +1,27 @@
+.searchbar-container {
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  border: 5px solid black;
+}
+.searchbar-container input,
+button {
+  min-height: 30px;
+  margin-right: 20px;
+  font-size: 25px;
+}
+.search__buttons {
+  color: white;
+  background-color: #3066be;
+  width: 140px;
+  cursor: pointer;
+}
+.search-box {
+  width: 500px;
+}
+.clear {
+  background-color: #dd5334;
+}
+/* hover effecs */

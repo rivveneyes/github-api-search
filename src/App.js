@@ -33,7 +33,7 @@ const App = () => {
       <AlertState>
         <Router>
           <Navbar />
-          <div>
+          <div className="container-app">
             {alert && <Alert />}
             <Switch>
               <Route

@@ -1,0 +1,22 @@
+.navbar-container {
+  text-align: center;
+  font-size: 2.5rem;
+  background-color: #3066be;
+  margin: auto;
+}
+.link-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+.link-container a {
+  color: #90adc4;
+  padding: 3px 5px;
+  margin: 0 25px 10px;
+}
+.link-container a:last-child {
+  margin-right: 0px;
+}
+.link-container a:hover {
+  color: black;
+}

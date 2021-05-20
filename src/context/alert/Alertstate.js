@@ -1,31 +1,28 @@
 import React, { useReducer } from "react";
 import AlertContext from "./alertContext";
 import AlertReducer from "./alertReducer";
-import {
-  SET_ALERT,
-  REMOVE_ALERT
-} from "../types";
+import { SET_ALERT, REMOVE_ALERT } from "../types";
 
 const AlertState = (props) => {
-  const initalState = null ;
+  const initalState = null;
 
   const [state, dispatch] = useReducer(AlertReducer, initalState);
 
+  //Set Alert
   const setAlert = (msg, type) => {
     dispatch({
-        type:SET_ALERT,
-        payload:{msg, type}
-    })
+      type: SET_ALERT,
+      payload: { msg, type },
+    });
 
-    setTimeout(() => dispatch({type:REMOVE_ALERT}), 3500);
+    setTimeout(() => dispatch({ type: REMOVE_ALERT }), 3500);
   };
-//Set Alert
 
   return (
     <AlertContext.Provider
       value={{
-        alert:state,
-        setAlert
+        alert: state,
+        setAlert,
       }}
     >
       {props.children}

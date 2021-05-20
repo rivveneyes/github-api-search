@@ -18,19 +18,25 @@ const Searchbar = () => {
 
   const onChange = (e) => setText(e.target.value);
   return (
-    <div>
+    <div className="searchbar-container">
       <form onSubmit={onSubmit}>
         <input
+          className="search-box"
           type="text"
           name="text"
           placeholder="Search Users"
           value={text}
           onChange={onChange}
         />
-        <input type="submit" value="Search" />
+        <input className="search__buttons" type="submit" value="Search" />
       </form>
       {githubContext.users.length > 0 && (
-        <button onClick={githubContext.clearUsers}>Clear</button>
+        <button
+          className="search__buttons clear"
+          onClick={githubContext.clearUsers}
+        >
+          Clear
+        </button>
       )}
     </div>
   );
