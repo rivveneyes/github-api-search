@@ -3,16 +3,13 @@ import PropTypes from "prop-types";
 
 const RepoItem = ({ repo }) => {
   return (
-    <div>
-      <h3>
-        <a href={repo.html_url}>{repo.name}</a>
-      </h3>
-    </div>
+    <h3>
+      <a href={repo.html_url}>{repo.name}</a>
+    </h3>
   );
 };
 
-
-RepoItem.proptype={
-    repo:PropTypes.object.isRequired,
-}
+RepoItem.proptype = {
+  repo: PropTypes.object.isRequired,
+};
 export default RepoItem;

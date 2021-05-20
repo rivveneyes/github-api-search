@@ -5,11 +5,16 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: #119da4;
+}
 .container-app {
   padding: 20px 30px 0px;
   background-color: #119da4;
 }
 @import "styles.css/navbar.css";
+@import "styles.css/about-page.css";
 @import "styles.css/alert.css";
 @import "styles.css/searchbar.css";
 @import "styles.css/users-layout.css";
+@import "styles.css/repo-profile.css";

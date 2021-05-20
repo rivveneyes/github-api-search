@@ -18,37 +18,44 @@ const User = ({ match }) => {
     avatar_url,
     location,
     bio,
-    // login,
+    login,
     html_url,
-    // followers,
-    // following,
-    // public_repos,
-    // public_gists,
+    public_repos,
     hireable,
   } = user;
   if (loading) return <Spinner />;
   return (
     <Fragment>
-      <Link to="/">Back-Test</Link>
-      Hireable:{" "}
-      {<input type="checkbox" checked={hireable} disabled="disabled" />}
+      <Link className="back-button" to="/">
+        Back
+      </Link>
       <div>
-        <div>
-          <img src={avatar_url} alt={`img of person named ${name}`} />
-          <h1>{name}</h1>
-          <p>Location:{location}</p>
-        </div>
-        <div>
-          {bio && (
-            <Fragment>
-              <h3>BIO</h3>
-              <p>{bio}</p>
-            </Fragment>
-          )}
-          <a href={html_url}>Go To Github Profile</a>
+        <div className="about-person-container">
+          <div className="repo-card">
+            <img src={avatar_url} alt={`img of person named ${name}`} />
+            <h1>{name}</h1>
+            <p> login: {login}</p>
+            <a href={html_url}>Go To Github Profile</a>
+          </div>
+          <div className="repo-info-card">
+            Hireable:
+            {<input type="checkbox" checked={hireable} disabled="disabled" />}
+            {location && <p>Location:{location}</p>}
+            <hr />
+            {bio && (
+              <Fragment>
+                <h3>BIO</h3>
+                <span>{bio}</span>
+              </Fragment>
+            )}
+            <p> Number of public repos:{public_repos}</p>
+          </div>
         </div>
       </div>
-      <Repos repos={repos} />
+      <h2 className="repos-header">REPOS</h2>
+      <div className="repos-grid">
+        <Repos repos={repos} />
+      </div>
     </Fragment>
   );
 };

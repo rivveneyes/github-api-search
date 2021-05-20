@@ -1,0 +1,49 @@
+.back-button {
+  color: #3066be;
+  font-size: 2.5rem;
+  border-bottom: 5px solid black;
+  float: left;
+}
+.about-person-container {
+  border: 5px solid white;
+  display: flex;
+  max-width: fit-content;
+  margin: auto;
+}
+.repo-card {
+  text-align: center;
+  padding: 20px;
+}
+.repo-card a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+}
+.repo-info-card {
+  background-color: #90adc4;
+  padding: 30px 20px 0px;
+  max-width: 250px;
+  text-align: center;
+}
+.repo-info-card h3 {
+  margin-bottom: 10px;
+}
+.repo-info-card p {
+  padding-top: 50px;
+}
+.repos-header {
+  font-size: 2.5;
+  text-align: center;
+}
+.repos-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.repos-grid a {
+  font-size: 1.5rem;
+  color: white;
+  border-bottom: 2px solid black;
+}
