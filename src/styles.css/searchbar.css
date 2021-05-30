@@ -1,7 +1,5 @@
 .searchbar-container {
-  padding-right: 150px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 120px 20px 10px;
   display: flex;
   justify-content: center;
   border: 5px solid black;
@@ -24,4 +22,17 @@ button {
 .clear {
   background-color: #dd5334;
 }
-/* hover effecs */
+
+@media (max-width: 1200px) {
+  .searchbar-container {
+    padding-right: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+  .search-box {
+    width: 100%;
+  }
+  .search__buttons {
+    display: inline;
+  }
+}

@@ -11,22 +11,7 @@ import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/Alertstate";
 import "./App.css";
 const App = () => {
-  // useEffect(() => {
-  //   initalLoad();
-  //   //eslint-disable-next-line
-  // }, []);
-
-  // async function initalLoad() {
-  //   setLoading(true);
-  //   const response = await axios.get(
-  //     `https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secert=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
-  //   );
-
-  //   setUsers(response.data);
-  //   setLoading(false);
-  // }
-
-  //Alert
+  
 
   return (
     <GithubState>

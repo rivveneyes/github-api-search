@@ -1,9 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PersonCard from "./Usercard";
 import Spinner from "../Spinner";
 import GithubContext from "../../context/github/githubContext";
 const Users = () => {
   const githubContext = useContext(GithubContext);
+
+  useEffect(() => {
+    githubContext.searchUsers("A");
+    //eslint-disable-next-line
+  }, []);
 
   const { loading, users } = githubContext;
   return loading ? (

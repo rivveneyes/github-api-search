@@ -29,15 +29,15 @@ const Searchbar = () => {
           onChange={onChange}
         />
         <input className="search__buttons" type="submit" value="Search" />
+        {githubContext.users.length > 0 && (
+          <button
+            className="search__buttons clear"
+            onClick={githubContext.clearUsers}
+          >
+            Clear
+          </button>
+        )}
       </form>
-      {githubContext.users.length > 0 && (
-        <button
-          className="search__buttons clear"
-          onClick={githubContext.clearUsers}
-        >
-          Clear
-        </button>
-      )}
     </div>
   );
 };

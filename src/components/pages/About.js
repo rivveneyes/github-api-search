@@ -6,7 +6,6 @@ const About = () => {
       <h1 className="heading center">About This App</h1>
       <p className="info ">
         This app was created to be able to search for Github users.
-        <hr />
         <br />
         This application was maid with HTML,CSS,React. I maid calls to the
         github api useing a axios library. The application is currently lauched
