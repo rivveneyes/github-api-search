@@ -7,6 +7,13 @@ import Searchbar from "./components/userlayout/Searchbar";
 import Alert from "./components/userlayout/Alert";
 import About from "./components/pages/About";
 // import axios from "axios";
+<<<<<<< Updated upstream
+=======
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/Alertstate";
 import "./App.css";
@@ -19,6 +26,7 @@ const App = () => {
         <Router>
           <Navbar />
           <div className="container-app">
+      <h1>test</h1>
             {alert && <Alert />}
             <Switch>
               <Route
